@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+       SEO META TAGS — update these with your real info
+       ============================================================ -->
+  <meta name="description" content="Mohammad Ayan — Beginner Web Developer specialising in HTML, CSS, JavaScript, PHP and MySQL. Open for internships and freelance projects." />
+  <meta name="keywords" content="web developer, portfolio, HTML, CSS, JavaScript, PHP, MySQL, frontend, internship" />
+  <meta name="author" content="Mohammad Ayan" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mohammad Ayan — Web Developer Portfolio" />
+  <meta property="og:description" content="Beginner web developer building clean, responsive websites." />
+  <meta property="og:type" content="website" />
+  <!-- ============================================================ -->
+
+  <title>Mohammad Ayan — Web Developer Portfolio</title>
+
+  <!-- Favicon — "AM" monogram, matches lime/mint accent -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2716%27%20fill%3D%27%230a0f0c%27/%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23baff29%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%233dfad0%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext%20x%3D%2732%27%20y%3D%2742%27%20font-family%3D%27JetBrains%20Mono%2C%20monospace%27%20font-weight%3D%27700%27%20font-size%3D%2724%27%20fill%3D%27url%28%23g%29%27%20text-anchor%3D%27middle%27%3E%26lt%3B/%26gt%3B%3C/text%3E%3C/svg%3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet — path: css/style.css -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Scroll progress indicator -->
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scroll-progress-bar"></div></div>
+
+  <!-- Cursor glow (desktop only, decorative) -->
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       LOADING SCREEN
+       ============================================================ -->
+  <div id="loader" class="loader">
+    <h1 class="loader-name">Mohammad Ayan</h1>
+  </div>
+
+  <!-- ============================================================
+       AMBIENT BACKGROUND — dot grid + drifting outline shapes
+       ============================================================ -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="dot-grid"></div>
+    <div class="shape shape-square"></div>
+    <div class="shape shape-plus">+</div>
+    <div class="shape shape-circle"></div>
+    <div class="shape shape-bracket">{ }</div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <header id="navbar" class="navbar">
+    <div class="nav-container">
+      <!-- ── LOGO / NAME — change "AM" and "Mohammad Ayan" -->
+      <a href="#hero" class="nav-logo" aria-label="Mohammad Ayan – home">
+        <span class="logo-mark">MA</span>
+        <span class="logo-name">Mohammad Ayan</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about"        class="nav-link" data-section="about">About</a>
+        <a href="#services"     class="nav-link" data-section="services">Services</a>
+        <a href="#projects"     class="nav-link" data-section="projects">Projects</a>
+        <a href="#journey"      class="nav-link" data-section="journey">Journey</a>
+        <a href="#contact"      class="nav-link" data-section="contact">Contact</a>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+      <a href="#about"          class="mobile-link">About</a>
+      <a href="#services"       class="mobile-link">Services</a>
+      <a href="#projects"       class="mobile-link">Projects</a>
+      <a href="#journey"        class="mobile-link">Journey</a>
+      <a href="#contact"        class="mobile-link">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section id="hero" class="hero section">
+      <div class="container hero-grid">
+
+        <!-- Left: text content -->
+        <div class="hero-content reveal-left">
+          <p class="hero-eyebrow mono">Hello, I'm</p>
+
+          <!-- ── CHANGE YOUR NAME HERE -->
+          <h1 class="hero-name">Mohammad<br /><span class="gradient-text">Ayan</span></h1>
+
+          <!-- ── ROLES — edit the data-roles list to change what cycles here -->
+          <p class="hero-title mono">
+            <span class="hero-title-prefix">&lt;</span>
+            <span id="typed-text" class="typed-text" data-roles="Web Developer,Frontend Enthusiast,Problem Solver,Lifelong Learner"></span><span class="typed-cursor">|</span>
+            <span class="hero-title-prefix">/&gt;</span>
+          </p>
+
+          <!-- ── CHANGE YOUR BIO HERE -->
+          <p class="hero-bio">
+            A passionate beginner web developer crafting clean, responsive websites
+            with modern technologies. Currently studying Software Engineering and
+            building real-world projects to break into the industry.
+          </p>
+
+          <!-- CTA buttons -->
+          <div class="hero-actions">
+            <!-- ── Resume path: assets/resume/resume.pdf -->
+            <a href="assets/resume/resume.pdf" download class="btn btn-primary" target="_blank">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
+            <a href="#contact" class="btn btn-ghost">Hire Me</a>
+          </div>
+
+          <!-- Social links — UPDATE HREFS with your real profiles -->
+          <div class="hero-socials">
+            <!-- GitHub — change href -->
+            <a href="https://github.com/mohammadayan2010" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <!-- LinkedIn — change href -->
+            <a href="https://www.linkedin.com/in/mohammad-ayan-b614b03a1/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <!-- Email — change href -->
+            <a href="mailto:m.ayanshahzad2010@gmail.com" class="social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: profile image -->
+        <div class="hero-image-wrap reveal-right">
+          <div class="hero-image-ring">
+            <!--
+              PROFILE IMAGE — replace src with images/profile.jpg
+              Keep width/height attributes for performance
+            -->
+            <img
+              src="images/profile.jpg"
+              alt="Mohammad Ayan — Web Developer profile photo"
+              class="hero-img"
+              width="400"
+              height="400"
+              loading="eager"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Fallback placeholder shown if image is missing -->
+            <div class="img-placeholder" style="display:none;" aria-hidden="true">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>profile.jpg</span>
+            </div>
+          </div>
+          <!-- Floating code-tag decorations -->
+          <span class="float-tag tag-1 mono">&lt;div&gt;</span>
+          <span class="float-tag tag-2 mono">.css</span>
+          <span class="float-tag tag-3 mono">php()</span>
+          <span class="float-tag tag-4 mono">SELECT *</span>
+
+          <!-- Floating badges -->
+          <div class="badge badge-tl">
+            <span class="badge-num counter" data-count="1">0</span><span class="badge-plus">+</span>
+            <span class="badge-label">Year<br/>Learning</span>
+          </div>
+          <div class="badge badge-br">
+            <span class="badge-num counter" data-count="6">0</span><span class="badge-plus">+</span>
+            <span class="badge-label">Projects<br/>Built</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         TECH MARQUEE — decorative scrolling strip
+         ── To edit: change the words inside .marquee-track spans.
+            The track is duplicated once in HTML for a seamless loop.
+         ============================================================ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>HTML5</span><span class="dot">●</span>
+        <span>CSS3</span><span class="dot">●</span>
+        <span>JAVASCRIPT</span><span class="dot">●</span>
+        <span>BOOTSTRAP</span><span class="dot">●</span>
+        <span>PHP</span><span class="dot">●</span>
+        <span>MYSQL</span><span class="dot">●</span>
+        <span>GIT &amp; GITHUB</span><span class="dot">●</span>
+        <span>RESPONSIVE DESIGN</span><span class="dot">●</span>
+        <span>CLEAN CODE</span><span class="dot">●</span>
+        <!-- duplicate for seamless loop -->
+        <span>HTML5</span><span class="dot">●</span>
+        <span>CSS3</span><span class="dot">●</span>
+        <span>JAVASCRIPT</span><span class="dot">●</span>
+        <span>BOOTSTRAP</span><span class="dot">●</span>
+        <span>PHP</span><span class="dot">●</span>
+        <span>MYSQL</span><span class="dot">●</span>
+        <span>GIT &amp; GITHUB</span><span class="dot">●</span>
+        <span>RESPONSIVE DESIGN</span><span class="dot">●</span>
+        <span>CLEAN CODE</span><span class="dot">●</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         ============================================================ -->
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <p class="section-eyebrow mono">// who I am</p>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- Image column -->
+          <div class="about-image-wrap reveal-left">
+            <!--
+              ABOUT IMAGE — replace with images/about.jpg
+            -->
+            <img
+              src="images/about.jpg"
+              alt="Mohammad Ayan working at a desk"
+              class="about-img"
+              width="480"
+              height="560"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="img-placeholder img-placeholder--tall" style="display:none;" aria-hidden="true">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>about.jpg</span>
+            </div>
+            <!-- Decorative code snippet card -->
+            <div class="code-card glass">
+              <p class="mono code-snippet"><span class="code-keyword">const</span> developer = {<br/>
+              &nbsp;&nbsp;passion: <span class="code-string">"building"</span>,<br/>
+              &nbsp;&nbsp;status: <span class="code-string">"learning"</span>,<br/>
+              &nbsp;&nbsp;goal: <span class="code-string">"hired"</span><br/>
+              };</p>
+            </div>
+          </div>
+
+          <!-- Text column -->
+          <div class="about-content reveal-right">
+            <!-- ── UPDATE THIS BIO TEXT -->
+            <h3 class="about-heading">Turning curiosity into<br/><span class="gradient-text">clean code</span></h3>
+            <p class="about-text">
+              Hi! I'm Ayan, a self-motivated beginner web developer from Karachi, Pakistan.
+              I started my coding journey driven by a genuine curiosity for how websites work,
+              and I've been hooked ever since.
+            </p>
+            <p class="about-text">
+              I'm currently studying Software Engineering while simultaneously building real
+              projects to sharpen my practical skills. My focus is on writing clean, readable
+              code that solves real problems — not just passing tutorials.
+            </p>
+            <p class="about-text">
+              I'm actively seeking internship opportunities and freelance projects where I can
+              contribute, learn from experienced developers, and continue growing fast.
+            </p>
+
+            <!-- Quick facts -->
+            <div class="about-facts">
+              <!-- ── UPDATE EACH FACT -->
+              <div class="fact-item glass">
+                <span class="fact-icon">📍</span>
+                <div>
+                  <p class="fact-label">Location</p>
+                  <p class="fact-value">Karachi, Pakistan</p>
+                </div>
+              </div>
+              <div class="fact-item glass">
+                <span class="fact-icon">🎓</span>
+                <div>
+                  <p class="fact-label">Education</p>
+                  <p class="fact-value">Software Engineering</p>
+                </div>
+              </div>
+              <div class="fact-item glass">
+                <span class="fact-icon">💼</span>
+                <div>
+                  <p class="fact-label">Availability</p>
+                  <p class="fact-value">Open to Work</p>
+                </div>
+              </div>
+              <div class="fact-item glass">
+                <span class="fact-icon">🌐</span>
+                <div>
+                  <p class="fact-label">Languages</p>
+                  <p class="fact-value">English, Urdu</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#projects" download class="btn btn-primary mt-md">view projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+         ── To add a service: duplicate a .service-card block.
+         ============================================================ -->
+    <section id="services" class="services section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <p class="section-eyebrow mono">// what I offer</p>
+          <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+          <p class="section-sub">Practical web solutions I can build for you right now.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card glass reveal-up">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="service-title">Static Website Development</h3>
+            <p class="service-desc">Clean, fast multi-page websites built with pure HTML and CSS — no bloat, no dependencies, just speed.</p>
+            <ul class="service-list">
+              <li>Multi-page layouts</li>
+              <li>Pixel-perfect designs</li>
+              <li>Cross-browser compatible</li>
+            </ul>
+          </div>
+
+          <div class="service-card glass reveal-up">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3 class="service-title">Dynamic Website Development</h3>
+            <p class="service-desc">PHP + MySQL powered sites with login systems, admin panels and user interaction built in.</p>
+            <ul class="service-list">
+              <li>User authentication</li>
+              <li>Database-driven content</li>
+              <li>Admin dashboards</li>
+            </ul>
+          </div>
+
+          <div class="service-card glass reveal-up">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/></svg>
+            </div>
+            <h3 class="service-title">Responsive Web Design</h3>
+            <p class="service-desc">Layouts that look and feel flawless on every device — from a 320 px phone to a 4K monitor.</p>
+            <ul class="service-list">
+              <li>Mobile-first approach</li>
+              <li>Flexible grid systems</li>
+              <li>Touch-friendly UIs</li>
+            </ul>
+          </div>
+
+          <div class="service-card glass reveal-up">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3 class="service-title">Portfolio Websites</h3>
+            <p class="service-desc">Personal portfolio sites that make a strong first impression on recruiters, clients and collaborators.</p>
+            <ul class="service-list">
+              <li>Personal branding</li>
+              <li>Project showcases</li>
+              <li>Contact integration</li>
+            </ul>
+          </div>
+
+          <div class="service-card glass reveal-up">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h3 class="service-title">Landing Pages</h3>
+            <p class="service-desc">Conversion-focused single-page sites for products, events, or services — built to engage and convert.</p>
+            <ul class="service-list">
+              <li>Clear call-to-action</li>
+              <li>Fast load times</li>
+              <li>SEO-ready markup</li>
+            </ul>
+          </div>
+
+          <div class="service-card glass reveal-up">
+            <div class="service-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="service-title">Database Integration</h3>
+            <p class="service-desc">Connect your site to a MySQL database — product catalogues, contact forms, user data and more.</p>
+            <ul class="service-list">
+              <li>MySQL database design</li>
+              <li>CRUD operations</li>
+              <li>Secure queries (PDO)</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS SECTION
+         ── To add a project: copy one entire .project-card block,
+            paste it after the last card, and update:
+              1. src on <img> → e.g. images/project7.jpg
+              2. alt text
+              3. .proj-cat text
+              4. h3 title
+              5. p description
+              6. .tag spans
+              7. href on GitHub and Live Demo buttons
+         ============================================================ -->
+    <section id="projects" class="projects section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <p class="section-eyebrow mono">// what I've built</p>
+          <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+          <p class="section-sub">Real projects I built while learning — each one taught me something new.</p>
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="proj-filters reveal-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="html-css">HTML / CSS</button>
+          <button class="filter-btn" data-filter="javascript">JavaScript</button>
+          <button class="filter-btn" data-filter="php-mysql">PHP / MySQL</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+
+          <!-- ══ PROJECT CARD 1 ══════════════════════════════════════
+               Image: images/project1.jpg
+               ═════════════════════════════════════════════════════ -->
+          <article class="project-card glass reveal-up" data-category="html-css">
+            <div class="proj-img-wrap">
+              <img
+                src="images/project1.jpg"
+                alt="Personal Portfolio Website screenshot"
+                class="proj-img"
+                width="600"
+                height="360"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="img-placeholder img-placeholder--proj" style="display:none;" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>project1.jpg</span>
+              </div>
+              <span class="proj-cat">HTML / CSS</span>
+            </div>
+            <div class="proj-body">
+              <h3 class="proj-title">Personal Portfolio v1</h3>
+              <p class="proj-desc">My very first portfolio website — a static single-page site built to practise layout and typography fundamentals.</p>
+              <div class="proj-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Responsive</span>
+              </div>
+              <div class="proj-actions">
+                <!-- ── UPDATE GitHub link -->
+                <a href="https://github.com/mohammadayan513" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <!-- ── UPDATE Live Demo link -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- ══ END PROJECT CARD 1 ══════════════════════════════════ -->
+
+          <!-- ══ PROJECT CARD 3 ══════════════════════════════════════
+               Image: images/project3.jpg
+               ═════════════════════════════════════════════════════ -->
+          <article class="project-card glass reveal-up" data-category="html-css">
+            <div class="proj-img-wrap">
+              <img
+                src="images/project3.jpg"
+                alt="Restaurant Landing Page screenshot"
+                class="proj-img"
+                width="600"
+                height="360"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="img-placeholder img-placeholder--proj" style="display:none;" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>project3.jpg</span>
+              </div>
+              <span class="proj-cat">HTML / CSS</span>
+            </div>
+            <div class="proj-body">
+              <h3 class="proj-title">flappy Bird</h3>
+              <p class="proj-desc">Flappy Geo 🐦 — A fully original, from-scratch Flappy Bird-style browser game built with pure HTML5, CSS3 & vanilla JavaScript. No frameworks, no external assets — every graphic is hand-drawn on Canvas and every sound is synthesized live.</p>
+              <div class="proj-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Bootstrap</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com/mohammadayan513" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a href="https://mohammadayan513.github.io/flappy_geo/index%20(2).html" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- ══ END PROJECT CARD 3 ══════════════════════════════════ -->
+
+          <!-- ══ PROJECT CARD 5 ══════════════════════════════════════
+               Image: images/project5.jpg
+               ═════════════════════════════════════════════════════ -->
+          <article class="project-card glass reveal-up" data-category="javascript">
+            <div class="proj-img-wrap">
+              <img
+                src="images/project5.jpg"
+                alt="Weather App screenshot"
+                class="proj-img"
+                width="600"
+                height="360"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="img-placeholder img-placeholder--proj" style="display:none;" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>project5.jpg</span>
+              </div>
+              <span class="proj-cat">JavaScript</span>
+            </div>
+            <div class="proj-body">
+              <h3 class="proj-title">Weather App</h3>
+              <p class="proj-desc">Fetches live weather data from a public API and displays current conditions with dynamic background themes.</p>
+              <div class="proj-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Fetch API</span>
+                <span class="tag">JSON</span>
+                <span class="tag">CSS3</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com/mohammadayan513" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a href="https://mohammadayan513.github.io/meridian__weatherSite/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- ══ END PROJECT CARD 5 ══════════════════════════════════ -->
+
+          <!-- ══ PROJECT CARD 6 ══════════════════════════════════════
+               Image: images/project6.jpg
+               ═════════════════════════════════════════════════════ -->
+          <article class="project-card glass reveal-up" data-category="php-mysql">
+            <div class="proj-img-wrap">
+              <img
+                src="images/project6.jpg"
+                alt="Simple E-Commerce Store screenshot"
+                class="proj-img"
+                width="600"
+                height="360"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="img-placeholder img-placeholder--proj" style="display:none;" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>project6.jpg</span>
+              </div>
+              <span class="proj-cat">PHP / MySQL</span>
+            </div>
+            <div class="proj-body">
+              <h3 class="proj-title">EventSphere 🌐</h3>
+              <p class="proj-desc">college event management platform that lets students discover, register, and relive campus events — all in one place. No more missed announcements. 📢</p>
+              <div class="proj-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com/mohammadayan513" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <a href="https://eventsphere-laravel-production.up.railway.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- ══ END PROJECT CARD 6 ══════════════════════════════════ -->
+
+          <!-- ══ ADD NEW PROJECT CARDS BELOW THIS LINE ══════════════ -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LEARNING JOURNEY SECTION (Timeline)
+         ── To add a milestone: duplicate a .timeline-item block.
+         ============================================================ -->
+    <section id="journey" class="journey section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <p class="section-eyebrow mono">// how I got here</p>
+          <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+          <p class="section-sub">Every milestone that shaped the developer I'm becoming.</p>
+        </div>
+
+        <div class="timeline">
+
+          <!-- Milestone 1 -->
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-year mono">2021 – 2023</span>
+              <h3 class="timeline-title">Matriculation</h3>
+              <p class="timeline-desc">
+                Completed secondary schooling with a focus on mathematics and computer science.
+                <span class="status-badge status-done">Completed</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-year mono">2024 – Present</span>
+              <h3 class="timeline-title">Software Engineering Studies</h3>
+              <p class="timeline-desc">
+                Enrolled in a Software Engineering programme, covering data structures, algorithms,
+                OOP, and web technologies.
+                <span class="status-badge status-ongoing">In Progress</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-year mono">2023 – Present</span>
+              <h3 class="timeline-title">Self-Learning Journey</h3>
+              <p class="timeline-desc">
+                Independently studied HTML, CSS, JavaScript, PHP, MySQL, Git and Bootstrap through
+                online courses, documentation and building real projects.
+                <span class="status-badge status-ongoing">Ongoing</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot timeline-dot--future"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-year mono">2025 →</span>
+              <h3 class="timeline-title">Future Goals</h3>
+              <p class="timeline-desc">
+                Land a web development internship, contribute to open source, learn React.js,
+                and eventually work as a full-stack developer at a product company.
+                <span class="status-badge status-future">Coming Soon</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION — update your details below
+         ============================================================ -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <p class="section-eyebrow mono">// let's talk</p>
+          <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+          <p class="section-sub">I'm open to internships, freelance projects and collaborations.</p>
+        </div>
+
+        <div class="contact-cards reveal-up">
+
+          <!-- ── UPDATE EMAIL -->
+          <a href="mailto:m.ayanshahzad2010@gmail.com" class="cinfo-card glass">
+            <div class="cinfo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="cinfo-body">
+              <p class="cinfo-label mono">Email</p>
+              <p class="cinfo-value">m.ayanshahzad2010@gmail.com</p>
+            </div>
+            <span class="cinfo-arrow">↗</span>
+          </a>
+
+          <!-- ── UPDATE PHONE -->
+          <a href="tel:+923001234567" class="cinfo-card glass">
+            <div class="cinfo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="cinfo-body">
+              <p class="cinfo-label mono">Phone</p>
+              <p class="cinfo-value">+92 302 217 7515</p>
+            </div>
+            <span class="cinfo-arrow">↗</span>
+          </a>
+
+          <!-- ── UPDATE GITHUB -->
+          <a href="https://github.com/mohammadayan513" target="_blank" rel="noopener noreferrer" class="cinfo-card glass">
+            <div class="cinfo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div class="cinfo-body">
+              <p class="cinfo-label mono">GitHub</p>
+              <p class="cinfo-value">github.com/mohammadayan513</p>
+            </div>
+            <span class="cinfo-arrow">↗</span>
+          </a>
+
+          <!-- ── UPDATE LINKEDIN -->
+          <a href="https://www.linkedin.com/in/mohammad-ayan-b614b03a1/" target="_blank" rel="noopener noreferrer" class="cinfo-card glass">
+            <div class="cinfo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="cinfo-body">
+              <p class="cinfo-label mono">LinkedIn</p>
+              <p class="cinfo-value">linkedin.com/in/mohammad-ayan-b614b03a1/</p>
+            </div>
+            <span class="cinfo-arrow">↗</span>
+          </a>
+
+          <!-- ── UPDATE LOCATION -->
+          <div class="cinfo-card glass">
+            <div class="cinfo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="cinfo-body">
+              <p class="cinfo-label mono">Location</p>
+              <p class="cinfo-value">Karachi, Pakistan</p>
+            </div>
+          </div>
+
+          <!-- ── ADD WHATSAPP (optional) — update number -->
+          <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" class="cinfo-card glass">
+            <div class="cinfo-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            </div>
+            <div class="cinfo-body">
+              <p class="cinfo-label mono">WhatsApp</p>
+              <p class="cinfo-value">+92 302 217 7515</p>
+            </div>
+            <span class="cinfo-arrow">↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ── UPDATE social links and name
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">MA</span>
+        <!-- ── UPDATE NAME -->
+        <p class="footer-name">Mohammad Ayan</p>
+        <p class="footer-tagline mono"> |building the web, one commit at a time</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-socials">
+        <a href="https://github.com/mohammadayan513" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link social-link--sm">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/mohammad-ayan-b614b03a1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link social-link--sm">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:m.ayanshahzad2010@gmail.com" aria-label="Email" class="social-link social-link--sm">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+
+      <p class="footer-copy mono">
+        &copy; <span id="copy-year"></span> Mohammad Ayan. Built with HTML, CSS &amp; JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back-to-top button -->
+  <button class="back-top" id="back-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- JavaScript — path: js/script.js -->
+  <script src="js/script.js"></script>
+</body>
+</html>
