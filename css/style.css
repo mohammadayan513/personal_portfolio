@@ -1723,4 +1723,6 @@ main, header, footer { position: relative; z-index: 1; }
   .back-top { bottom: var(--sp-sm); right: var(--sp-sm); }
 
   .marquee-track span { font-size: 0.7rem; }
+
+   .hero-image-ring { animation: none; border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
 }
